@@ -1,5 +1,5 @@
 {
-  "name": "tgt",
+  "name": "today-good-thing",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.16",
     "next": "12.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@graphql-codegen/add": "3.1.0",
+    "@graphql-codegen/cli": "2.2.1",
+    "@graphql-codegen/typescript": "2.2.4",
+    "@graphql-codegen/typescript-operations": "2.1.8",
+    "@graphql-codegen/typescript-react-apollo": "3.1.6",
     "eslint": "7",
-    "eslint-config-next": "12.0.1"
+    "eslint-config-next": "12.0.1",
+    "graphql": "15.7.1"
   }
 }
