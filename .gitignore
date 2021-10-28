@@ -32,3 +32,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+
+# graphql-codegen generated file
+graphql/api.ts
+graphql/introspection-result.ts
+graphql/mocks.ts

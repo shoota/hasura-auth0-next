@@ -1,0 +1,18 @@
+schema: ./schema.json
+documents: ./**/*.graphql
+generates:
+  ./graphql/api.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withComponent: false
+      withHOC: false
+      withHooks: true
+      withRefetchFn: truea
+  ./graphql/introspection-result.ts:
+    plugins:
+      - fragment-matcher
+    config:
+      apolloClientVersion: 3

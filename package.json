@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "codegen": "graphql-codegen --config codegen.yml",
     "dev": "next dev",
     "dumpschema": "apollo schema:download --endpoint http://localhost:8080/v1/graphql",
     "build": "next build",
@@ -18,6 +19,7 @@
   "devDependencies": {
     "@graphql-codegen/add": "3.1.0",
     "@graphql-codegen/cli": "2.2.1",
+    "@graphql-codegen/fragment-matcher": "^3.1.0",
     "@graphql-codegen/typescript": "2.2.4",
     "@graphql-codegen/typescript-operations": "2.1.8",
     "@graphql-codegen/typescript-react-apollo": "3.1.6",
