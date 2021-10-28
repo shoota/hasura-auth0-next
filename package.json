@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dumpschema": "apollo schema:download --endpoint http://localhost:8080/v1/graphql",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.16",
+    "@apollo/client": "3.4.16",
     "next": "12.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
@@ -20,6 +21,7 @@
     "@graphql-codegen/typescript": "2.2.4",
     "@graphql-codegen/typescript-operations": "2.1.8",
     "@graphql-codegen/typescript-react-apollo": "3.1.6",
+    "apollo": "2.33.7",
     "eslint": "7",
     "eslint-config-next": "12.0.1",
     "graphql": "15.7.1"
