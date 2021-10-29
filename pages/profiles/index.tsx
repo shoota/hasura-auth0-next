@@ -1,11 +1,10 @@
 import { Profiles } from "../../components/Profile"
-import { ProfilesQuery } from "../../graphql/api"
+import { useProfilesQuery } from "../../graphql/api"
 
-type Props = {
-  data?: ProfilesQuery
+const Page = () => {
+  const { data } = useProfilesQuery()
+  return <Profiles data={data} />
 }
-
-const Page = ({ data }: Props) => <Profiles />
 
 export default Page
 
