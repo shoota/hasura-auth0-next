@@ -1,16 +1,23 @@
+import { GetServerSideProps } from "next"
 import { Profiles } from "../../components/Profile"
-import { useProfilesQuery } from "../../graphql/api"
+import { ProfilesDocument, ProfilesQuery } from "../../graphql/api"
+import { client } from "../../graphql/apolloClient"
 
-const Page = () => {
-  const { data } = useProfilesQuery()
+type Props = {
+  data?: ProfilesQuery
+}
+
+const ProfilesPage: React.VFC<Props> = ({ data }) => {
   return <Profiles data={data} />
 }
 
-export default Page
+export default ProfilesPage
 
-// export const getServerSideProps: GetServerSideProps<Props> = async () => {
-//   const { data } = await useProfilesQuery()
-//   return {
-//     props: { data },
-//   }
-// }
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const { data } = await client
+    .query({ query: ProfilesDocument })
+    .then((data) => data)
+  return {
+    props: { data },
+  }
+}
