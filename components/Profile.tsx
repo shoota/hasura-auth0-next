@@ -7,7 +7,7 @@ export const Profiles: React.VFC = () => {
   return (
     <ul>
       {data?.profiles.map(({ id, name }) => (
-        <li>
+        <li key={id}>
           <p>
             id: {id} / name: {name}
           </p>
