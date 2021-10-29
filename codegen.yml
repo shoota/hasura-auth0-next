@@ -1,4 +1,4 @@
-schema: ./schema.json
+schema: http://localhost:8080/v1/graphql
 documents: ./**/*.graphql
 generates:
   ./graphql/api.ts:

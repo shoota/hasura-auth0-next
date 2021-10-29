@@ -5,7 +5,6 @@
   "scripts": {
     "codegen": "graphql-codegen --config codegen.yml",
     "dev": "next dev",
-    "dumpschema": "apollo schema:download --endpoint http://localhost:8080/v1/graphql",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -25,7 +24,6 @@
     "@graphql-codegen/typescript-react-apollo": "3.1.6",
     "@types/node": "16.11.6",
     "@types/react": "17.0.33",
-    "apollo": "2.33.7",
     "eslint": "7",
     "eslint-config-next": "12.0.1",
     "graphql": "15.7.1",
