@@ -38,3 +38,6 @@ yarn-error.log*
 graphql/api.ts
 graphql/introspection-result.ts
 graphql/mocks.ts
+
+# env
+hasura/env/.heroku.env

@@ -1,4 +1,4 @@
-## Next.js
+# Next.js
 
 Next は CNA で Typescript テンプレートを使用して作成する
 
@@ -6,11 +6,11 @@ Next は CNA で Typescript テンプレートを使用して作成する
 npx create-next-app@latest --ts
 ```
 
-## Hasura
+# Hasura
 
-### Local での確認用の docker
+## Local 環境の docker
 
-取得元
+取得
 
 ```bash
 curl https://raw.githubusercontent.com/hasura/graphql-engine/stable/install-manifests/docker-compose/docker-compose.yaml -o docker-compose.yml
@@ -22,11 +22,21 @@ curl https://raw.githubusercontent.com/hasura/graphql-engine/stable/install-mani
 docker-compose up -d
 ```
 
-### Heroku 環境
+## Heroku 環境
 
 https://heroku.com/deploy?template=https://github.com/hasura/graphql-engine-heroku
 
-### graphQL API からの codegen
+## Hasura DB への migration 実行
+
+1. Local 環境で hasura console を実行する
+   1.1 `yarn hasura:local`
+1. GUI で DB 操作を実行
+   1.1 記録された migrations を確認
+1. 特定環境に migration を実行
+   1.1 `hasura migrate apply --project hasura --envfile env/.[env name].env --database-name default` で DDL/DML を実行
+   1.1 `hasura metadata apply --project hasura --envfile env/.[env name].env` で Hasura メタデータを同期
+
+## graphQL API からの codegen
 
 ```bash
 yarn codegen
