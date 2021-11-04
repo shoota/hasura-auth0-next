@@ -12,7 +12,7 @@ export const Users: React.VFC<Props> = ({ data }) => (
     {data?.users.map(({ id, name }) => (
       <li key={id}>
         <p>
-          id: {id} / name: <Link href={`profiles/${id}`}>{name}</Link>
+          id: {id} / name: <Link href={`users/${id}`}>{name}</Link>
         </p>
       </li>
     ))}
