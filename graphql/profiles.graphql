@@ -1,6 +1,0 @@
-query profiles {
-  profiles {
-    name
-    id
-  }
-}
