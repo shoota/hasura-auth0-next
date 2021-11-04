@@ -5,14 +5,12 @@ generates:
     plugins:
       - typescript
       - typescript-operations
-      - typescript-react-apollo
+      - typescript-react-query
     config:
-      withComponent: false
-      withHOC: false
-      withHooks: true
-      withRefetchFn: truea
+    config:
+      fetcher: graphql-request
+      exposeFetcher: true
+      exposeQueryKeys: true
   ./graphql/introspection-result.ts:
     plugins:
       - fragment-matcher
-    config:
-      apolloClientVersion: 3
