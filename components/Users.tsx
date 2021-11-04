@@ -1,15 +1,15 @@
 import React from "react"
 import Link from "next/link"
 
-import { ProfilesQuery } from "../graphql/api"
+import { UsersQuery } from "../graphql/api"
 
 type Props = {
-  data?: ProfilesQuery
+  data?: UsersQuery
 }
 
-export const Profiles: React.VFC<Props> = ({ data }) => (
+export const Users: React.VFC<Props> = ({ data }) => (
   <ul>
-    {data?.profiles.map(({ id, name }) => (
+    {data?.users.map(({ id, name }) => (
       <li key={id}>
         <p>
           id: {id} / name: <Link href={`profiles/${id}`}>{name}</Link>
