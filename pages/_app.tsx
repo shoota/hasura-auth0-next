@@ -1,13 +1,17 @@
 import "../styles/globals.css"
 import type { AppProps } from "next/app"
-import { ApolloProvider } from "@apollo/client"
-import { client } from "../graphql/apolloClient"
+import { Hydrate, QueryClient, QueryClientProvider } from "react-query"
+
+// client side query client
+const queryClient = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ApolloProvider client={client}>
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <Component {...pageProps} />
+      </Hydrate>
+    </QueryClientProvider>
   )
 }
 
