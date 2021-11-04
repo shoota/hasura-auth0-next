@@ -29,12 +29,12 @@ https://heroku.com/deploy?template=https://github.com/hasura/graphql-engine-hero
 ## Hasura DB への migration 実行
 
 1. Local 環境で hasura console を実行する
-   1.1 `yarn hasura:local`
+   1. `yarn hasura:local`
 1. GUI で DB 操作を実行
-   1.1 記録された migrations を確認
+   1. 記録された migrations を確認
 1. 特定環境に migration を実行
-   1.1 `hasura migrate apply --project hasura --envfile env/.[env name].env --database-name default` で DDL/DML を実行
-   1.1 `hasura metadata apply --project hasura --envfile env/.[env name].env` で Hasura メタデータを同期
+   1. `hasura migrate apply --project hasura --envfile env/.[env name].env --database-name default` で DDL/DML を実行
+   1. `hasura metadata apply --project hasura --envfile env/.[env name].env` で Hasura メタデータを同期
 
 ## graphQL API からの codegen
 
