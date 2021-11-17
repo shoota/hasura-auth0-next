@@ -1,23 +1,29 @@
 import { GetServerSideProps } from "next"
+import { QueryClient } from "react-query"
 import { Users } from "../../components/Users"
-import { UsersDocument, UsersQuery } from "../../graphql/api"
-import { client } from "../../graphql/apolloClient"
+import { dehydrate, DehydratedState } from "react-query/hydration"
+
+import { UsersDocument, useUsersQuery } from "../../graphql/api"
+import { graphqlClient } from "../../graphql/client"
 
 type Props = {
-  data?: UsersQuery
+  dehydratedState: DehydratedState
 }
 
-const UsersPage: React.VFC<Props> = ({ data }) => {
+const UsersPage: React.VFC<Props> = () => {
+  const { data } = useUsersQuery(graphqlClient)
   return <Users data={data} />
 }
 
 export default UsersPage
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const { data } = await client
-    .query({ query: UsersDocument })
-    .then((data) => data)
+  const queryClient = new QueryClient()
+  await queryClient.prefetchQuery(useUsersQuery.getKey(), () =>
+    graphqlClient.request(UsersDocument)
+  )
+
   return {
-    props: { data },
+    props: { dehydratedState: dehydrate(queryClient) },
   }
 }
