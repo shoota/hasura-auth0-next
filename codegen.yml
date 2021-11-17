@@ -7,7 +7,6 @@ generates:
       - typescript-operations
       - typescript-react-query
     config:
-    config:
       fetcher: graphql-request
       exposeFetcher: true
       exposeQueryKeys: true
